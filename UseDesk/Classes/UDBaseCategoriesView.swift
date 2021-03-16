@@ -32,7 +32,7 @@ class UDBaseCategoriesView: UIViewController, UITableViewDelegate, UITableViewDa
     private var landscapeOrientation: LandscapeOrientation? = nil
     
     private var dialogflowVC : DialogflowView = DialogflowView()
-    private var offlineVC = UDOfflineForm(nibName: "UDOfflineForm", bundle: nil)
+    private var offlineVC = UDOfflineForm(nibName: "UDOfflineForm", bundle: BundleId.thisBundle)
     
     convenience init() {
         let nibName: String = "UDBaseCategoriesView"
@@ -128,8 +128,8 @@ class UDBaseCategoriesView: UIViewController, UITableViewDelegate, UITableViewDa
         }
         navigationItem.title = baseCollection?.title ?? usedesk!.stringFor("Category")
       
-        tableView.register(UINib(nibName: "UDBaseSearchCell", bundle: nil), forCellReuseIdentifier: "UDBaseSearchCell")
-        tableView.register(UINib(nibName: "UDBaseCategoriesCell", bundle: nil), forCellReuseIdentifier: "UDBaseCategoriesCell")
+        tableView.register(UINib(nibName: "UDBaseSearchCell", bundle: BundleId.thisBundle), forCellReuseIdentifier: "UDBaseSearchCell")
+        tableView.register(UINib(nibName: "UDBaseCategoriesCell", bundle: BundleId.thisBundle), forCellReuseIdentifier: "UDBaseCategoriesCell")
         tableView.reloadData()
     }
     

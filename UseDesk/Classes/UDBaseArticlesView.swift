@@ -31,7 +31,7 @@ class UDBaseArticlesView: UIViewController, UITableViewDelegate, UITableViewData
     private var landscapeOrientation: LandscapeOrientation? = nil
     
     private var dialogflowVC : DialogflowView = DialogflowView()
-    private var offlineVC = UDOfflineForm(nibName: "UDOfflineForm", bundle: nil)
+    private var offlineVC = UDOfflineForm(nibName: "UDOfflineForm", bundle: BundleId.thisBundle)
     
     convenience init() {
         let nibName: String = "UDBaseArticlesView"
@@ -130,8 +130,8 @@ class UDBaseArticlesView: UIViewController, UITableViewDelegate, UITableViewData
         }
         navigationItem.title = сategory?.title ?? usedesk!.stringFor("Article")
         
-        tableView.register(UINib(nibName: "UDBaseArticleViewCell", bundle: nil), forCellReuseIdentifier: "UDBaseArticleViewCell")
-        tableView.register(UINib(nibName: "UDBaseSearchCell", bundle: nil), forCellReuseIdentifier: "UDBaseSearchCell")
+        tableView.register(UINib(nibName: "UDBaseArticleViewCell", bundle: BundleId.thisBundle), forCellReuseIdentifier: "UDBaseArticleViewCell")
+        tableView.register(UINib(nibName: "UDBaseSearchCell", bundle: BundleId.thisBundle), forCellReuseIdentifier: "UDBaseSearchCell")
         tableView.reloadData()
     }
     

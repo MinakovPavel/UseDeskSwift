@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let startViewController = UDStartViewController(nibName: "UDStartViewController", bundle: nil)
+        let startViewController = UDStartViewController(nibName: "UDStartViewController", bundle: BundleId.thisBundle)
         
         UINavigationBar.appearance().barTintColor = .red
         
